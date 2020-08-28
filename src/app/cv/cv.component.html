@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="half-width-area">
+        <!-- Névjegy -->
+        <mat-card id="header">
+            <mat-card-content fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="20">
+                    <img class="avatar" src="assets/img/avatar.jpg">
+                </div>
+                <div fxFlex class="vertical-center">
+                    <h1>Madarász László</h1>
+                    <h2>Full-stack fejlesztő</h2>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <!-- Nyelvek/technológiák -->
+        <div class="inner-row">
+            <div class="half-width-area">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Nyelvismeret</mat-card-title>
+                        <mat-icon mat-card-avatar>language</mat-icon>
+                    </mat-card-header>
+                    <div *ngFor="let nyelv of nyelvek" class="ikon-felsorolas-elem">
+                        <img src="assets/img/flags/{{nyelv.name}}.png" class="ikon-felsorolas-ikon">
+                        <span class="ikon-felsorolas-szoveg">{{nyelv.label}} - {{nyelv.level}}</span>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="half-width-area">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Elérhetőségek</mat-card-title>
+                        <mat-icon mat-card-avatar>chat</mat-icon>
+                    </mat-card-header>
+                    <div *ngFor="let elerhetoseg of elerhetosegek" class="ikon-felsorolas-elem">
+                        <mat-icon *ngIf="!elerhetoseg.icon.startsWith('icons/')" class="ikon-felsorolas-ikon">{{elerhetoseg.icon}}</mat-icon>
+                        <img *ngIf="elerhetoseg.icon.startsWith('icons/')" class="ikon-felsorolas-ikon" src="assets/img/{{elerhetoseg.icon}}">
+                        <span *ngIf="!elerhetoseg.link" class="ikon-felsorolas-szoveg">{{elerhetoseg.value}}</span>
+                        <span *ngIf="elerhetoseg.link" class="ikon-felsorolas-szoveg">
+                            <a href="https://{{elerhetoseg.value}}" target="_blank">{{elerhetoseg.value}}</a>
+                        </span>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+        <!-- Szakterületek -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Szakterületeim</mat-card-title>
+                <mat-icon mat-card-avatar>favorite_border</mat-icon>
+            </mat-card-header>
+            <div *ngFor="let szakterulet of szakteruletek" class="szakterulet-elem">
+                <h3><img class="szakterulet-kep" src="assets/img/{{szakterulet.img}}">{{szakterulet.title}}</h3>
+                <p>{{szakterulet.description}}</p>
+                <h5>Referenciák</h5>
+                <div class="szakterulet-referencia-area">
+                    <div class="szakterulet-referencia-elem" *ngFor="let reference of szakterulet.references">
+                        <a [href]="reference.url" target="_blank"><img class="szakterulet-referencia-kep" src="assets/img/companies/{{reference.img}}"></a>
+                        <a [href]="reference.url" target="_blank">{{ reference.title }}</a>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        
+    </div>
+
+
+    
+    <div class="half-width-area">
+        <!-- Idővonal -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Főbb tapasztalataim</mat-card-title>
+                <mat-icon mat-card-avatar>work</mat-icon>
+            </mat-card-header>
+            <app-idovonal [idovonalElemek]="idovonalElemek"></app-idovonal>
+        </mat-card>
+        <!-- Szakmai anyagok -->
+
+        <!-- Technológiák -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Ezekkel dolgozom</mat-card-title>
+                <mat-icon mat-card-avatar>build</mat-icon>
+            </mat-card-header>
+            <mat-chip-list>
+                <mat-chip *ngFor="let technologia of technologiak">{{technologia}}</mat-chip>
+            </mat-chip-list>
+        </mat-card>
+
+        <!-- Motiváció -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Motivációm</mat-card-title>
+                <mat-icon mat-card-avatar>build</mat-icon>
+            </mat-card-header>
+            <p>Bár az elmúlt években rengeteg érdekes projektben volt lehetőségem a fejlődésre, a saját vállalkozás 
+            vezetésével járó teendők sokaságának következtében gyakran nehéz volt magára a lényegi munkára fókuszálnom.
+            Az elmúlt időszakban megfogalmazódott bennem az igény, hogy többet gyakoroljam és tanuljam a 
+            webfejlesztést, kibontakozhassak igazán ezen a területen, illetve hogy egy olyan kiszámítható 
+            környezet vegyen körül, amely ezt lehetővé teszi. Emellett pedig folyamatosan törekszem egy olyan 
+            munka-magánéleti egyensúly kialakítására, amelyben a legtöbbet tudok másoknak adni életem minden területén.</p>
+        </mat-card>
+
+        <!-- Mit nyújtok? -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Mit nyújtok?</mat-card-title>
+                <mat-icon mat-card-avatar>build</mat-icon>
+            </mat-card-header>
+            <ul>
+                <li *ngFor="let nyujtas of nyujtasok">
+                    <span class="nyujtas-cim">{{ nyujtas.cim }}</span><br>{{ nyujtas.leiras }}
+                </li>
+            </ul>
+        </mat-card>
+
+        <!-- Mit keresek? -->
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Mit keresek?</mat-card-title>
+                <mat-icon mat-card-avatar>build</mat-icon>
+            </mat-card-header>
+            <ul>
+                <li *ngFor="let igeny of igenyek">
+                    <span class="igeny-cim">{{ igeny.cim }}</span><br>{{ igeny.leiras }}
+                </li>
+            </ul>
+        </mat-card>
+    </div>
+
+    
+    
+
+    
+    
+
+</div>

@@ -1,0 +1,111 @@
+.container {
+    margin: 20px auto;
+    padding: 0 20px;
+    max-width: 1300px;
+}
+
+.avatar {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#header {
+    h1 {
+        font-size: 32px;
+        font-weight: 800;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layout */
+
+$gutter: 20px;
+$mobile-breakpoint: 600px;
+
+.half-width-area {
+    float: left;
+    width: calc(50% - #{$gutter * 2});
+    padding: 0 $gutter;
+    @media screen and (max-width: $mobile-breakpoint) {
+        width: calc(100% - #{$gutter});
+        padding: 0 $gutter / 2;
+    }
+    mat-card {
+        margin-bottom: $gutter;
+    }
+}
+
+.inner-row {
+    overflow: hidden;
+}
+
+/* Felsorolások */
+
+.ikon-felsorolas-elem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    .ikon-felsorolas-ikon {
+        margin-right: 5px;
+        height: 15px;
+        width: 15px;
+        font-size: 15px;
+    }
+}
+
+/* Szakterületek */
+
+.szakterulet-elem {
+    margin-bottom: 20px;
+}
+
+.szakterulet-elem h3 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.szakterulet-kep {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.szakterulet-referencia-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @media screen and (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.szakterulet-referencia-elem {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: min-content;
+    margin-bottom: 20px;
+    img {
+        height: 100px;
+    }
+    @media screen and (max-width: $mobile-breakpoint) {
+        margin-bottom: 10px;
+    }
+}
+
+.igeny-cim, .nyujtas-cim {
+    font-weight: 800;
+}

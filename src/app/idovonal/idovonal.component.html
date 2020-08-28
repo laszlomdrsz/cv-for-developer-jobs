@@ -1,0 +1,13 @@
+<div class="idovonal-datum-gomb idovonal-datum-gomb-max">{{ currentYear }}</div>
+<div class="idovonal">
+    <div class="idovonal-elem" *ngFor="let idovonalElem of idovonalElemek">
+        <div class="idovonal-header">
+            <img class="idovonal-kep" src="assets/img/companies/{{idovonalElem.kep}}" *ngIf="idovonalElem.kep">
+            <div class="idovonal-cim">{{ idovonalElem.cim }}</div>
+            <div class="idovonal-pozicio">{{ idovonalElem.pozicio }}</div>
+            <div class="idovonal-datum">{{ idovonalElem.datum }}</div>
+        </div>
+        <div class="idovonal-leiras">{{ idovonalElem.leiras }}</div>
+    </div>
+</div>
+<div class="idovonal-datum-gomb idovonal-datum-gomb-min">{{ 2014 }}</div>
