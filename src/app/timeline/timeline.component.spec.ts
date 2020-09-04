@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IdovonalComponent } from './idovonal.component';
+import { TimelineComponent } from './timeline.component';
 
-describe('IdovonalComponent', () => {
-  let component: IdovonalComponent;
-  let fixture: ComponentFixture<IdovonalComponent>;
+describe('TimelineComponent', () => {
+  let component: TimelineComponent;
+  let fixture: ComponentFixture<TimelineComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IdovonalComponent ]
+      declarations: [ TimelineComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IdovonalComponent);
+    fixture = TestBed.createComponent(TimelineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

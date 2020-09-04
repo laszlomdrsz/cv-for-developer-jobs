@@ -1,140 +1,123 @@
-<div class="container">
+<div class="container" *ngIf="cvData">
     <div class="half-width-area">
-        <!-- Névjegy -->
+        <!-- Header -->
         <mat-card id="header">
             <mat-card-content fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
                 <div fxFlex="20">
                     <img class="avatar" src="assets/img/avatar.jpg">
                 </div>
                 <div fxFlex class="vertical-center">
-                    <h1>Madarász László</h1>
-                    <h2>Full-stack fejlesztő</h2>
-
+                    <h1>{{ cvData.labels.name }}</h1>
+                    <h2>{{ cvData.labels.profession }}</h2>
                 </div>
             </mat-card-content>
         </mat-card>
-        <!-- Nyelvek/technológiák -->
+        <!-- Languages/contact info -->
         <div class="inner-row">
             <div class="half-width-area">
                 <mat-card>
                     <mat-card-header>
-                        <mat-card-title>Nyelvismeret</mat-card-title>
+                        <mat-card-title>{{ cvData.labels.spokenLanguages }}</mat-card-title>
                         <mat-icon mat-card-avatar>language</mat-icon>
                     </mat-card-header>
-                    <div *ngFor="let nyelv of nyelvek" class="ikon-felsorolas-elem">
-                        <img src="assets/img/flags/{{nyelv.name}}.png" class="ikon-felsorolas-ikon">
-                        <span class="ikon-felsorolas-szoveg">{{nyelv.label}} - {{nyelv.level}}</span>
+                    <div *ngFor="let language of cvData.languages" class="icon-list-element">
+                        <img src="assets/img/flags/{{language.name}}.png" class="icon-list-icon">
+                        <span class="icon-list-text">{{language.label}} - {{language.level}}</span>
                     </div>
                 </mat-card>
             </div>
             <div class="half-width-area">
                 <mat-card>
                     <mat-card-header>
-                        <mat-card-title>Elérhetőségek</mat-card-title>
+                        <mat-card-title>{{ cvData.labels.contacts }}</mat-card-title>
                         <mat-icon mat-card-avatar>chat</mat-icon>
                     </mat-card-header>
-                    <div *ngFor="let elerhetoseg of elerhetosegek" class="ikon-felsorolas-elem">
-                        <mat-icon *ngIf="!elerhetoseg.icon.startsWith('icons/')" class="ikon-felsorolas-ikon">{{elerhetoseg.icon}}</mat-icon>
-                        <img *ngIf="elerhetoseg.icon.startsWith('icons/')" class="ikon-felsorolas-ikon" src="assets/img/{{elerhetoseg.icon}}">
-                        <span *ngIf="!elerhetoseg.link" class="ikon-felsorolas-szoveg">{{elerhetoseg.value}}</span>
-                        <span *ngIf="elerhetoseg.link" class="ikon-felsorolas-szoveg">
-                            <a href="https://{{elerhetoseg.value}}" target="_blank">{{elerhetoseg.value}}</a>
+                    <div *ngFor="let contact of cvData.contacts" class="icon-list-element">
+                        <mat-icon *ngIf="!contact.icon.startsWith('icons/')" class="icon-list-icon">{{contact.icon}}</mat-icon>
+                        <img *ngIf="contact.icon.startsWith('icons/')" class="icon-list-icon" src="assets/img/{{contact.icon}}">
+                        <span *ngIf="!contact.link" class="icon-list-text">{{contact.value}}</span>
+                        <span *ngIf="contact.link" class="icon-list-text">
+                            <a href="https://{{contact.value}}" target="_blank">{{contact.value}}</a>
                         </span>
                     </div>
                 </mat-card>
             </div>
         </div>
 
-        <!-- Szakterületek -->
+        <!-- Specialties -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Szakterületeim</mat-card-title>
+                <mat-card-title>{{ cvData.labels.specialties }}</mat-card-title>
                 <mat-icon mat-card-avatar>favorite_border</mat-icon>
             </mat-card-header>
-            <div *ngFor="let szakterulet of szakteruletek" class="szakterulet-elem">
-                <h3><img class="szakterulet-kep" src="assets/img/{{szakterulet.img}}">{{szakterulet.title}}</h3>
-                <p>{{szakterulet.description}}</p>
-                <h5>Referenciák</h5>
-                <div class="szakterulet-referencia-area">
-                    <div class="szakterulet-referencia-elem" *ngFor="let reference of szakterulet.references">
-                        <a [href]="reference.url" target="_blank"><img class="szakterulet-referencia-kep" src="assets/img/companies/{{reference.img}}"></a>
+            <div *ngFor="let specialty of cvData.specialties" class="specialty-element">
+                <h3><img class="specialty-image" src="assets/img/{{specialty.img}}">{{specialty.title}}</h3>
+                <p>{{specialty.description}}</p>
+                <h5>{{ cvData.labels.references }}</h5>
+                <div class="specialty-reference-area">
+                    <div class="specialty-reference-element" *ngFor="let reference of specialty.references">
+                        <a [href]="reference.url" target="_blank"><img class="specialty-reference-image" src="assets/img/companies/{{reference.img}}"></a>
                         <a [href]="reference.url" target="_blank">{{ reference.title }}</a>
                     </div>
                 </div>
             </div>
         </mat-card>
-        
     </div>
-
-
-    
+ 
     <div class="half-width-area">
-        <!-- Idővonal -->
+        <!-- Timeline -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Főbb tapasztalataim</mat-card-title>
+                <mat-card-title>{{ cvData.labels.timeline }}</mat-card-title>
                 <mat-icon mat-card-avatar>work</mat-icon>
             </mat-card-header>
-            <app-idovonal [idovonalElemek]="idovonalElemek"></app-idovonal>
+            <app-timeline [timelineElements]="cvData.timelineElements"></app-timeline>
         </mat-card>
-        <!-- Szakmai anyagok -->
 
-        <!-- Technológiák -->
+        <!-- Technologies -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Ezekkel dolgozom</mat-card-title>
+                <mat-card-title>{{ cvData.labels.technologies }}</mat-card-title>
                 <mat-icon mat-card-avatar>build</mat-icon>
             </mat-card-header>
             <mat-chip-list>
-                <mat-chip *ngFor="let technologia of technologiak">{{technologia}}</mat-chip>
+                <mat-chip *ngFor="let technology of cvData.technologies">{{technology}}</mat-chip>
             </mat-chip-list>
         </mat-card>
 
-        <!-- Motiváció -->
+        <!-- Motivation -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Motivációm</mat-card-title>
+                <mat-card-title>{{ cvData.labels.motivation }}</mat-card-title>
                 <mat-icon mat-card-avatar>build</mat-icon>
             </mat-card-header>
-            <p>Bár az elmúlt években rengeteg érdekes projektben volt lehetőségem a fejlődésre, a saját vállalkozás 
-            vezetésével járó teendők sokaságának következtében gyakran nehéz volt magára a lényegi munkára fókuszálnom.
-            Az elmúlt időszakban megfogalmazódott bennem az igény, hogy többet gyakoroljam és tanuljam a 
-            webfejlesztést, kibontakozhassak igazán ezen a területen, illetve hogy egy olyan kiszámítható 
-            környezet vegyen körül, amely ezt lehetővé teszi. Emellett pedig folyamatosan törekszem egy olyan 
-            munka-magánéleti egyensúly kialakítására, amelyben a legtöbbet tudok másoknak adni életem minden területén.</p>
+            <p>{{ cvData.motivation }}</p>
         </mat-card>
 
-        <!-- Mit nyújtok? -->
+        <!-- Offers -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Mit nyújtok?</mat-card-title>
+                <mat-card-title>{{ cvData.labels.offers }}</mat-card-title>
                 <mat-icon mat-card-avatar>build</mat-icon>
             </mat-card-header>
             <ul>
-                <li *ngFor="let nyujtas of nyujtasok">
-                    <span class="nyujtas-cim">{{ nyujtas.cim }}</span><br>{{ nyujtas.leiras }}
+                <li *ngFor="let offer of cvData.offers">
+                    <span class="offer-title">{{ offer.title }}</span><br>{{ offer.description }}
                 </li>
             </ul>
         </mat-card>
 
-        <!-- Mit keresek? -->
+        <!-- Demands -->
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Mit keresek?</mat-card-title>
+                <mat-card-title>{{ cvData.labels.demands }}</mat-card-title>
                 <mat-icon mat-card-avatar>build</mat-icon>
             </mat-card-header>
             <ul>
-                <li *ngFor="let igeny of igenyek">
-                    <span class="igeny-cim">{{ igeny.cim }}</span><br>{{ igeny.leiras }}
+                <li *ngFor="let demand of cvData.demands">
+                    <span class="demand-title">{{ demand.title }}</span><br>{{ demand.description }}
                 </li>
             </ul>
         </mat-card>
     </div>
-
-    
-    
-
-    
-    
-
 </div>

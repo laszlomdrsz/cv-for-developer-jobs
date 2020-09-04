@@ -48,13 +48,13 @@ $mobile-breakpoint: 600px;
     overflow: hidden;
 }
 
-/* Felsorolások */
+/* Lists */
 
-.ikon-felsorolas-elem {
+.icon-list-element {
     display: flex;
     align-items: center;
     margin-bottom: 3px;
-    .ikon-felsorolas-ikon {
+    .icon-list-icon {
         margin-right: 5px;
         height: 15px;
         width: 15px;
@@ -62,25 +62,25 @@ $mobile-breakpoint: 600px;
     }
 }
 
-/* Szakterületek */
+/* Specialties */
 
-.szakterulet-elem {
+.specialty-element {
     margin-bottom: 20px;
 }
 
-.szakterulet-elem h3 {
+.specialty-element h3 {
     display: flex;
     align-items: center;
     font-size: 18px;
     font-weight: 800;
 }
 
-.szakterulet-kep {
+.specialty-image {
     height: 30px;
     margin-right: 10px;
 }
 
-.szakterulet-referencia-area {
+.specialty-reference-area {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -91,7 +91,7 @@ $mobile-breakpoint: 600px;
     }
 }
 
-.szakterulet-referencia-elem {
+.specialty-reference-element {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -106,6 +106,6 @@ $mobile-breakpoint: 600px;
     }
 }
 
-.igeny-cim, .nyujtas-cim {
+.demand-title, .offer-title {
     font-weight: 800;
 }

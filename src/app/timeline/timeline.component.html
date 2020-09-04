@@ -1,0 +1,13 @@
+<div class="timeline-date-btn timeline-date-btn-max">{{ currentYear }}</div>
+<div class="timeline">
+    <div class="timeline-element" *ngFor="let timelineElement of timelineElements">
+        <div class="timeline-header">
+            <img class="timeline-image" src="assets/img/companies/{{timelineElement.image}}" *ngIf="timelineElement.image">
+            <div class="timeline-title">{{ timelineElement.title }}</div>
+            <div class="timeline-position">{{ timelineElement.position }}</div>
+            <div class="timeline-date">{{ timelineElement.date }}</div>
+        </div>
+        <div class="timeline-description">{{ timelineElement.description }}</div>
+    </div>
+</div>
+<div class="timeline-date-btn timeline-date-btn-min">{{ 2014 }}</div>

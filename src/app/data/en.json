@@ -1,0 +1,198 @@
+{
+    "labels": {
+        "name": "László Madarász",
+        "profession": "Full-Stack Web Developer",
+        "spokenLanguages": "Language skills",
+        "contacts": "Contact",
+        "specialties": "Specialties",
+        "references": "References",
+        "timeline": "My experience",
+        "technologies": "Technologies I use",
+        "offers": "What I can offer",
+        "demands": "What I am looking for",
+        "motivation": "My motivation"
+    },
+    "timelineElements": [
+        {
+          "title": "Web Developer Mentor (Webmentor Group Bt.)",
+          "position": "Founder, mentor for web developers",
+          "date": "06/2020 -",
+          "description": "Mentoring included consultancy, continous assistance, creating information material (articles, e-book, video course)",
+          "image": "webfejlesztomentor.jpg"
+        },
+        {
+          "title": "OnlineVagyok",
+          "position": "Founder",
+          "date": "06/2017 - 06/2020",
+          "description": "My first web development enterprise is now under full control of my former team.",
+          "image": "onlinevagyok.png"
+        },
+        {
+          "title": "Impact Hub Budapest",
+          "position": "Social Impact Award Community Lead",
+          "date": "02/2019 - 06/2019",
+          "description": "Supporting educational and marketing activities, helping with the organization of events, and carrying out web development tasks.",
+          "image": "impacthub.jpg"
+        },
+        {
+          "title": "Holistic Medical Health Center",
+          "position": "Online Marketing Manager",
+          "date": "05/2015 - 06/2017",
+          "description": "I got familiar with WordPress and gained a great deal of experience in marketing.",
+          "image": "holisticmedical.png"
+        },
+        {
+          "title": "AIESEC",
+          "position": "Team Leader/Supervisor",
+          "date": "10/2014 - 06/2017",
+          "description": "Dealing with marketing, organizational tasks, contact with NGOs, and supporting foreigners living in Hungary among other responsibilities.",
+          "image": "aiesec.jpg"
+        },
+        {
+          "title": "Corvinus University of Budapest",
+          "position": "International Business Economics BA",
+          "date": "09/2014 - 06/2020",
+          "description": "The reason behind choosing studies were the opportunities of networking, preparing to start an enterprise, and developing my mathematics and language skills. ",
+          "image": "corvinus.png"
+        }
+      ],
+    
+      "languages": [
+        {"name": "en", "label": "English", "level": "C1"},
+        {"name": "de", "label": "German", "level": "C1"},
+        {"name": "jp", "label": "Japanese", "level": "B1"},
+        {"name": "hu", "label": "Hungarian", "level": "Native"}
+      ],
+    
+      "contacts": [
+        {"icon": "call", "label": "Phone", "value": "+36707757137"},
+        {"icon": "email", "label": "Email", "value": "laszlomdrsz@gmail.com"},
+        {"icon": "icons/github.png", "label": "Github", "value": "github.com/laszlomdrsz", "link": true},
+        {"icon": "icons/linkedin.png", "label": "LinkedIn", "value": "linkedin.com/in/laszlomadarasz", "link": true}
+      ],
+    
+      "specialties": [
+        {
+          "title": "Full-stack web development",
+          "description": "When I started web development in 2012 while in high school as a hobby, I did not know it was going to be my main occupation later.",
+          "img": "angular-nodejs.png",
+          "references": [
+            {
+              "title": "Csomagpont accounting system and other API connections",
+              "url": "https://csomagpont.com/",
+              "img": "csomagpont.jpg"
+            },
+            {
+              "title": "Szuperinfó advertisement placement system",
+              "url": "https://szuperinfo.hirdessemeg.hu",
+              "img": "szuperinfo.png"
+            },
+            {
+              "title": "ShopRenter Csomagpont application",
+              "url": "https://support.shoprenter.hu/hc/hu/articles/360009934018-Csomagpont",
+              "img": "shoprenter.png"
+            },
+            {
+              "title": "MediaWorks advertisement placement system",
+              "url": "https://napilap.hirdessemeg.hu",
+              "img": "mediaworks.jpg"
+            },
+            {
+              "title": "Kreatívliget accounting system",
+              "url": "https://kreativliget.hu/",
+              "img": "kreativliget.svg"
+            }
+        ]
+        },
+        {
+          "title": "Education",
+          "description": "I always felt a special kind of passion towards learning and passing on my knowledge, for this reason I started educational projects whenever I had the opportunity.",
+          "img": "oktatas.png",
+          "references": [
+            {
+              "title": "MinnerAkadémia WordPress course",
+              "url": "https://minnerakademia.hu/products/course/wordpress-weboldal-keszites-oktatas-kezdoknek",
+              "img": "minner.png"
+            },
+            {
+              "title": "Web Developer Mentor",
+              "url": "https://webfejlesztomentor.hu",
+              "img": "webfejlesztomentor.jpg"
+            },
+            {
+              "title": "Egyetemistából vállalkozó (From university student to enterpreneur)",
+              "url": "https://www.youtube.com/watch?v=Zol1cdtO8-A",
+              "img": "egyetemistabolvallalkozo.jpg"
+            }
+        ]
+        },
+        {
+          "title": "WordPress development",
+          "description": "There were many companies in my environment managing WordPress site on a user level, so I met their demands by offering custom WordPress development services.",
+          "img": "wordpress.png",
+          "references": [
+            {
+              "title": "Balaicza private health center clinical evidence system",
+              "url": "https://balaicza.hu/",
+              "img": "balaicza.png"
+            },
+            {
+              "title": "Next Purchase Discount plugin",
+              "url": "https://wordpress.org/plugins/next-purchase-discount-for-woocommerce/",
+              "img": "npd.png"
+            },
+            {
+              "title": "Kreatívliget webshop custom development",
+              "url": "https://kreativliget.hu/",
+              "img": "kreativliget.svg"
+            }
+        ]
+        }
+      ],
+    
+      "technologies": ["HTML5", "CSS3", "SCSS", "Angular", "NodeJS", "PHP", "TypeScript", "Git", "MySQL", "MongoDB", "Angular Material",
+      "Docker", "Linux", "WordPress", "WooCommerce"],
+    
+      "offers": [
+        {
+          "title": "Self-dependence, problem-solving",
+          "description": "I got used to solving any given task only by myself."
+        },
+        {
+          "title": "Quick learning",
+          "description": "I am ready to learn anything and I even enjoy it."
+        },
+        {
+          "title": "Flexibility",
+          "description": "I consider a job done if my partner is satisfied, even if it means taking extra steps."
+        },
+        {
+          "title": "Punctuality, reliability",
+          "description": "It is rare for a project not to be late in today's business world, but there were very few times when someone needed to wait for me to finish."
+        },
+        {
+          "title": "Self-employed",
+          "description": "I can do my own taxes and provide other requirements for myself in order to complete the job."
+        }
+      ],
+    
+      "demands": [
+        {
+          "title": "Flexible working place and hours",
+          "description": "In order to use my energies the most efficiently."
+        },
+        {
+          "title": "Evaluation based on performance",
+          "description": "Instead of hours spent idle the value of work is what matters."
+        },
+        {
+          "title": "Friendly, confidential environment",
+          "description": "I do my best during work and assume the same about others. I like if this is mutual."
+        },
+        {
+          "title": "Regular payment on a monthly basis",
+          "description": "In order to keep my focus on the job instead ofhandling financial instability."
+        }
+      ],
+      "motivation": "Although I had many exciting projects to develop myself professionally in the last few years, leading my own company meant a dozen of duties that made it heavy to concentrate on the essential work itself. Recently I felt the calling to practice and study web development on a deeper level, run a great career in this area, and having a stable environment around me, which enables this. In addition, I am constantly striving to reach a professional-private life balance, where I can give the best of myself in all areas of life."
+}

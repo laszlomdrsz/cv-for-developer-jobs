@@ -1,0 +1,50 @@
+$timeline-date-btn-diameter: 40px;
+$line-weight: 2px;
+$connecting-line-length: 20px;
+$timeline-element-padding: 5px;
+
+.timeline {
+    border-left: 2px solid #000;
+    margin-left: $timeline-date-btn-diameter / 2 + $line-weight;
+    padding: 20px 10px 20px $connecting-line-length - $line-weight;
+}
+
+.timeline-element {
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: max-content;
+    max-width: 100%;
+    min-width: 300px;
+    padding: $timeline-element-padding;
+    margin-bottom: 15px;
+    &:after {
+        content: "";
+        height: 5px;
+        width: $connecting-line-length;
+        border-top: $line-weight solid #000;
+        position: relative;
+        left: - $timeline-element-padding - $connecting-line-length;
+        display: block;
+        top: -30px;
+    }
+}
+
+.timeline-date-btn {
+    width: $timeline-date-btn-diameter;
+    height: $timeline-date-btn-diameter;
+    display: flex;
+    border: $line-weight solid #000;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-title {
+    font-weight: 800;
+}
+
+.timeline-image {
+    float: left;
+    height: 60px;
+    margin-right: 10px;
+}
